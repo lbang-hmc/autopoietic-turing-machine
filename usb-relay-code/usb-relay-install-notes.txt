@@ -1,0 +1,117 @@
+sudo apt install python-dev libusb-1.0-0-dev libudev-dev
+
+
+# is this step needed???
+pip3 install --upgrade setuptools
+
+
+pip3 install hidapi
+
+# install deprecated python pip
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip
+
+pip install hidapi
+
+
+
+------------------------------------------------------
+Entire history of commands starting from when I first 
+decided to work on this today, May 12, 2020, until it 
+finally worked and the relay's started switching
+----------------------------------------------------
+
+
+  103  cd Very-Simple-USB-Relay
+  104  ls
+  105  cat test.py
+  106  ls
+  107  cat relay.py
+  108  code relay.py
+  109  pip3 install hidapi
+  110  ls
+  111  which pip
+  112  sudo apt install pip
+  113  sudo apt install python-pip
+  114  which pip
+  115  which pip3
+  116* ssh -Y bang@saturn.cs.hmc.edu
+  117  sudo apt install python-dev libusb1.0-0-dev libudev-dev
+  118  sudo apt install python-dev libusb-1.0-0-dev libudev-dev
+  119  which pip
+  120  pip3 install --upgrade setuptools
+  121  pip3 install hidapi
+  122  ls
+  123  python relay.py
+  124  sudo apt install ^[[200~python-dev
+  125  cython
+  126  hidapi
+  127  libudev-dev
+  128  libusb-1.0-0
+  129  micro 
+  130  sudo apt install python3-dev
+  131  sudo apt install python-dev cython hidapi libudev-dev libusb-1.0-0 libusb-1.0-0-dev
+  132  pip install hidapi
+  133  sudo apt update
+  134  which pip
+  135  which pip3
+  136  sudo apt install python-pip
+  137  wget https://bootstrap.pypa.io/get-pip.py
+  138  sudo python get-pip.py
+  139  which pip
+  140  pip install hidapi
+  141  ls
+  142  python3 test.py
+  143  python3 relay.py
+  144  python relay.py
+  145  sudo apt install ipython3
+  146  ipython3
+  147  which python
+  148  python relay.py
+  149* cd /etc/udev
+  150* ls
+  151* cat rules.d
+  152* cd rules.d
+  153* ls
+  154* sudo micro 50-dct-tech-usb-relay-2.rules
+  155* vim 50-dct-tech-usb-relay-2.rules
+  156* sudo apt install vim
+  157* vim 50-dct-tech-usb-relay-2.rules
+  158  python relay.py
+  159  sudo python relay.py
+  160  sudo python3 relay.py
+  161  sudo python3 test.py
+  162  pip3 install hid <----- DONT DO THIS!!?!?
+  163  python3 relay.py
+  164  python3 test.py
+  165  sudo python3 test.py
+  166  sudo apt install python3-hidapi
+  167  sudo python3 test.py
+  168  sudo apt install python3-hid
+  169  sudo python3 test.py
+
+At this point I could not run test.py without sudo
+
+
+
+After all that I created 
+/etc/udev/rules.d/99-dct-tech-usb-relay-2.rules
+
+logged out, logged install
+
+ran 
+
+sudo udevadm control --reload-rule
+sudo udevadm trigger
+
+tried a bunch of things, then eventually discoverd that I think there is a name clash for 
+hid from the various packages I installed, but I don't know why running with sudo
+still made it work. After some time i did 
+
+pip3 uninstall hid
+
+and then
+
+python3 test.py 
+
+and it worked!!!
