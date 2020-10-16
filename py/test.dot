@@ -1,0 +1,33 @@
+digraph G {
+	graph [bb="0,0,178.35,265"];
+	node [label="\N"];
+	"Node A"	 [fillcolor=red,
+		height=0.5,
+		pos="87.347,247",
+		style=filled,
+		width=1.0652];
+	"Node B"	 [fillcolor=green,
+		height=0.5,
+		pos="38.347,174",
+		style=filled,
+		width=1.0652];
+	"Node A" -> "Node B"	 [pos="e,49.876,191.18 75.734,229.7 69.693,220.7 62.19,209.52 55.495,199.55"];
+	"Node C"	 [fillcolor="#000000",
+		height=0.5,
+		pos="38.347,91",
+		style=filled,
+		width=1.0652];
+	"Node B" -> "Node C"	 [pos="e,38.347,109.26 38.347,155.99 38.347,145.3 38.347,131.5 38.347,119.37"];
+	"Node D"	 [fillcolor="#976856",
+		height=0.5,
+		pos="71.347,18",
+		style=filled,
+		width=1.0652];
+	"Node C" -> "Node D"	 [pos="e,63.317,35.762 46.335,73.329 50.157,64.873 54.819,54.561 59.078,45.14"];
+	"Node D" -> "Node A"	 [color=blue,
+		fontsize=10.0,
+		label="and back we go again",
+		labelfontcolor="#009933",
+		lp="133.85,132.5",
+		pos="e,88.561,228.61 77.117,36.121 80.207,46.745 83.707,60.495 85.347,73 92.009,123.81 90.72,183.69 89.092,218.3"];
+}

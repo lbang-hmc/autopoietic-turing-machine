@@ -1,0 +1,157 @@
+# Created by Octave 4.2.2, Sun May 05 12:36:26 2019 PDT <bang@system76-pc>
+# name: ans
+# type: scalar
+0
+
+
+# name: current_state
+# type: scalar
+22
+
+
+# name: k
+# type: scalar
+1000
+
+
+# name: num_bits
+# type: scalar
+5
+
+
+# name: num_states
+# type: scalar
+32
+
+
+# name: num_transition_bits
+# type: scalar
+10
+
+
+# name: read_bit
+# type: scalar
+0
+
+
+# name: read_head_pos
+# type: matrix
+# rows: 1
+# columns: 2
+ 5 6
+
+
+# name: tape
+# type: matrix
+# rows: 64
+# columns: 10
+ 1 1 1 0 0 1 0 1 0 0
+ 1 0 1 0 0 1 0 1 0 1
+ 1 1 1 1 0 0 1 0 0 0
+ 1 0 1 1 1 1 1 1 0 0
+ 1 1 0 0 1 0 1 0 1 1
+ 1 1 0 0 0 0 1 0 0 0
+ 1 0 0 0 0 0 1 0 0 0
+ 0 1 1 0 0 0 1 0 0 0
+ 0 0 1 1 0 0 1 1 0 0
+ 1 0 1 1 0 1 1 1 0 0
+ 1 1 0 0 1 1 1 1 1 1
+ 1 0 1 0 0 0 0 0 0 0
+ 1 1 1 0 0 1 0 1 1 0
+ 0 1 1 1 0 0 1 0 1 0
+ 1 0 0 0 1 0 0 1 0 1
+ 0 0 0 0 1 1 1 0 1 0
+ 0 0 0 0 0 0 0 1 1 1
+ 1 1 0 0 1 0 1 1 1 0
+ 0 1 1 1 0 1 0 1 0 0
+ 0 0 0 1 1 1 0 0 0 1
+ 1 0 0 0 0 1 1 0 1 1
+ 1 0 0 1 0 0 1 0 0 0
+ 0 1 0 1 0 1 0 0 0 1
+ 0 0 0 0 1 1 0 0 0 0
+ 0 1 1 1 1 0 1 0 1 0
+ 1 0 0 0 1 0 1 0 0 0
+ 1 1 0 0 0 0 0 1 0 1
+ 1 0 1 1 1 0 1 1 0 0
+ 0 0 0 0 0 1 0 0 1 1
+ 0 1 0 1 1 1 0 0 1 0
+ 1 0 0 0 1 0 0 1 0 0
+ 0 0 1 1 0 1 0 1 0 0
+ 1 1 0 1 0 1 0 1 1 1
+ 1 0 0 0 1 0 1 1 1 0
+ 1 0 0 0 1 0 1 1 1 0
+ 1 1 0 1 0 0 1 0 0 0
+ 1 0 1 0 0 1 0 1 1 0
+ 1 0 0 1 1 1 1 1 1 0
+ 1 0 1 1 1 1 1 0 0 0
+ 0 0 0 0 0 1 0 1 0 0
+ 1 0 0 0 1 1 1 1 1 1
+ 1 0 0 1 0 1 0 0 1 1
+ 1 0 1 1 1 1 0 0 0 1
+ 0 0 0 0 1 0 0 0 0 0
+ 1 0 1 1 0 1 0 1 0 1
+ 0 1 1 0 0 0 1 0 1 0
+ 1 1 1 0 1 1 1 1 0 0
+ 1 1 0 0 1 0 1 1 0 0
+ 0 0 0 0 1 0 0 1 0 0
+ 0 0 0 1 0 1 0 1 0 1
+ 1 1 1 1 0 1 1 0 0 1
+ 1 1 1 0 0 1 0 0 0 1
+ 0 1 1 1 1 0 0 0 0 0
+ 0 0 0 0 1 0 1 0 0 1
+ 0 0 1 1 0 1 1 1 0 0
+ 1 1 1 0 0 1 1 0 1 1
+ 1 0 0 1 1 0 0 1 1 1
+ 0 0 1 1 0 0 1 1 1 0
+ 0 0 1 1 0 1 0 1 1 0
+ 1 0 1 0 0 1 0 0 1 0
+ 1 1 0 0 1 1 0 0 1 1
+ 0 0 0 1 1 1 1 0 1 0
+ 1 1 1 0 1 0 1 0 1 1
+ 1 1 0 1 0 0 1 1 1 0
+
+
+# name: u
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: read_x_dir
+# type: scalar
+1
+
+
+# name: read_y_dir
+# type: scalar
+1
+
+
+# name: write_x_dir
+# type: scalar
+1
+
+
+# name: write_y_dir
+# type: scalar
+-1
+
+
+# name: write_bit
+# type: scalar
+0
+
+
+# name: next_state
+# type: scalar
+22
+
+
+
+
+# name: write_head_pos
+# type: matrix
+# rows: 1
+# columns: 2
+ 10 48
+
+

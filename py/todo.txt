@@ -1,0 +1,14 @@
+
+figure out how to reprogram the arduino to remove the 50 keystroke limit
+
+add a cursor to the tm location in the encoding and the human readable
+
+update the decoding of bits to human readable to be simpler
+
+add scrolling
+
+increase number of bits?
+
+recover from typos 
+
+make git repo so code is not lost
