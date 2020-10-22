@@ -6,8 +6,8 @@ from relay import Relay
 
 class FakeRelay:
     def __init__(self):
-        self.state = ""
-    def state(n, on):
+        self.relaystate = ""
+    def state(self, n, on):
         print("relay " + str(n) + " on = " + str(on))
 
 
@@ -35,11 +35,11 @@ def type_by_keypress(tm, key):
         print('unknown tape symbol, ' + key)
 
 win = GraphWin(width = 1800, height = 950) # create a window
-win.setCoords(0, 0, 100, 100) # set the coordinates of the window; bottom left is (0, 0) and top right is (10, 10)
+win.setCoords(0, 0, 100, 100) # set the coordinates of the window; bottom left is (0, 0) and top right is (100, 100)
 x = 50
 y = 50
 win.master.geometry('%dx%d+%d+%d' % (1800, 950, x, y))
-mySquare = Rectangle(Point(1, 1), Point(99, 99)) # create a rectangle from (1, 1) to (9, 9)
+mySquare = Rectangle(Point(1, 1), Point(99, 99)) # create a rectangle from (1, 1) to (99, 99)
 mySquare.draw(win) # draw it to the window
 # win.getMouse() # pause before closing
 
@@ -51,6 +51,16 @@ bit_text = Text(Point(10,50), str(tm))
 bit_text.setFace("courier")
 bit_text.setSize(fontsize)    
 bit_text.draw(win)
+
+cursor_chars = list(str(tm).replace('0', ' ').replace('1', ' '))
+cursor_chars[(tm.width+1) * tm.y + tm.x] = 'X'
+cursor_str = "".join(cursor_chars)
+cursor_text = Text(Point(10,50), cursor_str)
+
+cursor_text.setFace("courier")
+cursor_text.setSize(fontsize)    
+
+cursor_text.draw(win)
 
 instr_text = Text(Point(55.0,51.1), tm.human_readable())
 instr_text.setFace("courier")
@@ -91,6 +101,11 @@ while (i < 10 and not done):
     todo_text.setText(str(todo) + ' [' + str(tm.x) + ', ' + str(tm.y) + ']')
 
 
+    # implementation is expecting a write (0/1) then move (u/d/l/r)
+    # should make it just wait for arbitrary key press then just 
+    # execute that keypress.
+
+
     # type_key = win.getKey()
     type_key = handle_typing(todo['type'])
     if(type_key == 'q'):
@@ -100,6 +115,13 @@ while (i < 10 and not done):
 
     bit_text.setText(str(tm))
     instr_text.setText(tm.human_readable())
+    cursor_chars = list(str(tm).replace('0', ' ').replace('1', ' '))
+    cursor_chars[(tm.width+1) * tm.y + tm.x] = 'X'
+    cursor_str = "".join(cursor_chars)
+    cursor_text.setText(cursor_str)
+
+
+
     time.sleep(0.5)
 
 
