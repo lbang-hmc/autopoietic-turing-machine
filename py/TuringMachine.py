@@ -178,7 +178,7 @@ class TuringMachine:
         else:
             return 'right'
 
-t = TuringMachine(4)
+# t = TuringMachine(4)
 
 
 # bitwidth = 5
