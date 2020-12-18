@@ -1,3 +1,8 @@
+perhaps manually render text to screen character by character
+to be able to control and know where each character is, so 
+that it is easier to align the cursor, space them out 
+align the "human readable" cursor
+
 
 figure out how to reprogram the arduino to remove the 50 keystroke limit
 
@@ -12,3 +17,9 @@ increase number of bits?
 recover from typos 
 
 make git repo so code is not lost
+
+
+incorporate a stop ('q') button into arduino controller 
+
+going right or left over the right and left boundary should 
+go to the line above or below as appropriate 
