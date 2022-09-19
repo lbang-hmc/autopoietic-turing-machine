@@ -8,7 +8,7 @@ relay = Relay(idVendor=0x16c0, idProduct=0x05df)
 
 sleep(3)
 
-for r in range(1,7):
+for r in range(1,8):
     relay.state(r, on=True)
     sleep(0.1)
     relay.state(r, on=False)

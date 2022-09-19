@@ -13,6 +13,18 @@ def tmEncodingToTextArray(tm):
                  for j in range(tm.width) ]
 
 
+def move_to_unicode(mv):
+    m = mv.strip()
+    if (m == 'up'):
+        return '↑  '
+    if (m == 'down'):
+        return '↓  '
+    if (m == 'left'):
+        return '←  '
+    if (m == 'right'):
+        return '→  '
+
+
 class TuringMachine:
 
     def __init__(self, bitwidth):
@@ -115,7 +127,8 @@ class TuringMachine:
         return {'state':self.state, 'read':self.read(), 'x':self.x, 'y':self.y}
 
     def human_readable(self):
-        return '\n'.join(['    from state ' + str(i).rjust(3, ' ') + ' ' + self.human_readable_line(self.encoding[i], self.bitwidth) for i in range(len(self.encoding))])
+        return '\n'.join([str(i).rjust(5, ' ') + '       ' + self.human_readable_line_terse(self.encoding[i], self.bitwidth) for i in range(len(self.encoding))])
+        # return '\n'.join(['    from state ' + str(i).rjust(3, ' ') + ' ' + self.human_readable_line(self.encoding[i], self.bitwidth) for i in range(len(self.encoding))])
 
     @staticmethod
     def line_to_instructions(line, bitwidth):
@@ -127,6 +140,7 @@ class TuringMachine:
 
         read_1_type_bits = line[offset]
         read_1_move_bits = line[offset + 1 : offset + 3]
+        read_1_next_bits = line[offset + 3 : offset + 3 + bitwidth]
         read_1_next_bits = line[offset + 3 : offset + 3 + bitwidth]
 
         read_0_type_instr = read_0_type_bits
@@ -143,6 +157,26 @@ class TuringMachine:
                 {"type": read_1_type_instr,
                  "move": read_1_move_instr,
                  "next": read_1_next_instr}]
+
+
+    @staticmethod
+    def human_readable_line_terse(line, bitwidth):
+
+        instructions = TuringMachine.line_to_instructions(line, bitwidth)
+
+        read_0_type_instr = str(instructions[0]['type']) + '    '
+        read_0_move_instr = move_to_unicode(instructions[0]['move']) + '     '
+        # read_0_move_instr = instructions[0]['move']
+        read_0_next_instr = str(instructions[0]['next']).rjust(4, ' ') + '       '
+
+        read_1_type_instr = str(instructions[1]['type']) + '    '
+        read_1_move_instr = move_to_unicode(instructions[1]['move']) + '    '
+        # read_1_move_instr = instructions[1]['move']
+        read_1_next_instr = str(instructions[1]['next']).rjust(4, ' ')
+
+        # print('.' + read_0_move_instr + '.')
+        
+        return ' '.join([read_0_type_instr, read_0_move_instr, read_0_next_instr, read_1_type_instr, read_1_move_instr, read_1_next_instr])
 
 
     @staticmethod

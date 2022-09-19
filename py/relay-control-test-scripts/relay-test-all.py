@@ -18,16 +18,15 @@ relay = Relay(idVendor=0x16c0, idProduct=0x05df)
 # relay.state(5, on=True)
 # sleep(1)
 
-sleep(5)
+# sleep(5)
 
-relaynum = 5
 
 for i in range(5):
 	for relaynum in range(1,7):
 		relay.state(relaynum, on=True)
 		sleep(0.1)
 		relay.state(relaynum, on=False)
-		sleep(1)
+		sleep(0.5)
 
 # relay.state(7, on=True)
 # sleep(1)

@@ -88,7 +88,7 @@ class Relay(object):
 		on=True will turn the relay on, on=False will turn them off.
 
 		"""
-
+		print("relay " + str(relay) + " on = " + str(on))
 		# Getter
 		if on == None:
 			if relay == 0:
