@@ -129,7 +129,7 @@ def handle_typing(to_type):
     return key
 
 def handle_moving(to_move):
-    relay_by_direction = {'up': 3, 'down': 4, 'left': 5, 'right': 6}
+    relay_by_direction = {'up': 3, 'down': 4, 'left': 8, 'right': 6}
     relay_n = relay_by_direction[to_move]
     relay.state(relay_n, on=True)
     time.sleep(0.05)

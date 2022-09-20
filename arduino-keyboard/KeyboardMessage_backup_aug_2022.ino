@@ -38,6 +38,8 @@ int previousButtonState8 = HIGH;   // for checking the state of a pushButton
 int previousButtonState9 = HIGH;   // for checking the state of a pushButton
 
 
+int counter = 0;                  // button push counter
+
 void setup() {
   // make the pushButton pin an input:
   pinMode(buttonPin4, INPUT);
@@ -60,38 +62,68 @@ void loop() {
   int buttonState9 = digitalRead(buttonPin9);
   
   // if the button state has changed,
-  if ((buttonState4 != previousButtonState4)
+  if ((buttonState4 != previousButtonState4 && counter < 50)
       // and it's currently pressed:
       && (buttonState4 == HIGH)) {
+    // increment the button counter
+    counter++;
+    // type out a message
     Keyboard.print("d");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
-  if ((buttonState5 != previousButtonState5)
+  if ((buttonState5 != previousButtonState5 && counter < 50)
       // and it's currently pressed:
       && (buttonState5 == HIGH)) {
+    // increment the button counter
+    counter++;
+    // type out a message
     Keyboard.print("f");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
-  else if ((buttonState6 != previousButtonState6)
+  else if ((buttonState6 != previousButtonState6 && counter < 50)
       // and it's currently pressed:
       && (buttonState6 == HIGH)) {
+    // increment the button counter
+    counter++;
     // type out a message
     Keyboard.print("h");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
-  else if ((buttonState7 != previousButtonState7)
+  else if ((buttonState7 != previousButtonState7 && counter < 50)
       // and it's currently pressed:
       && (buttonState7 == HIGH)) {
+    // increment the button counter
+    counter++;
+    // type out a message
     Keyboard.print("j");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
-  else if ((buttonState8 != previousButtonState8)
+  else if ((buttonState8 != previousButtonState8 && counter < 50)
       // and it's currently pressed:
       && (buttonState8 == HIGH)) {
+    // increment the button counter
+    counter++;
     // type out a message
     Keyboard.print("k");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
-  else if ((buttonState9 != previousButtonState9)
+  else if ((buttonState9 != previousButtonState9 && counter < 50)
       // and it's currently pressed:
       && (buttonState9 == HIGH)) {
-    Keyboard.print("l");
+    // increment the button counter
+    counter++;
+    // type out a message
+    Keyboard.print("L");
+//    Keyboard.print(counter);
+//    Keyboard.println(" times.");
   }
+
+  
   
   // save the current button state for comparison next time:
   previousButtonState4 = buttonState4;
@@ -100,5 +132,6 @@ void loop() {
   previousButtonState7 = buttonState7;
   previousButtonState8 = buttonState8;
   previousButtonState9 = buttonState9;
+
 
 }
