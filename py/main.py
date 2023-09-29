@@ -60,7 +60,7 @@ tm = TuringMachine(5)
 
 fontsize = 15
 
-memstr = "Memory Editor"
+memstr = "Source Code"
 mem_header = Text(Point(10,90), memstr)
 mem_header.setFace("courier")
 mem_header.setSize(fontsize)
@@ -120,6 +120,7 @@ def handle_typing(to_type):
         time.sleep(0.05)
         relay.state(7, on=False)
         key = win.checkKey()
+        key = 'd'
     else:
         relay.state(1, on=True)
         time.sleep(0.05)
